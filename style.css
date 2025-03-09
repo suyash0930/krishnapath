@@ -1,0 +1,146 @@
+body {
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 2vw; /* Relative padding for scalability */
+    margin: 0; /* Prevent overflow */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1 {
+    color: #4a148c;
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+    animation: fadeIn 1s ease-in;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; /* Slightly larger gap for touch */
+    max-width: 100%; /* Ensure it fits screen */
+    margin: auto;
+    padding: 0 1rem; /* Add side padding */
+}
+
+.btn {
+    padding: 0.75rem 1rem; /* Slightly larger for touch */
+    font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #673ab7;
+    color: white;
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    touch-action: manipulation; /* Improve touch response */
+}
+
+.btn:hover {
+    background-color: #512da8;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(81, 45, 168, 0.7);
+}
+
+.btn:active {
+    transform: scale(0.95); /* Feedback on tap */
+}
+
+#message {
+    margin-top: 1.5rem;
+    font-size: clamp(0.9rem, 3vw, 1.125rem); /* Responsive */
+    color: #333;
+    font-weight: bold;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    line-height: 1.5; /* Better readability */
+}
+
+#hidden-message {
+    display: none;
+    margin-top: 1.5rem;
+    font-size: clamp(1rem, 3.5vw, 1.25rem); /* Responsive */
+    color: red;
+    font-weight: bold;
+    opacity: 0;
+}
+
+#hidden-message.show {
+    display: block;
+    animation: slideIn 0.8s ease forwards;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem; /* Smaller gap for mobile */
+    }
+    .btn {
+        width: 85%; /* Slightly wider for touch */
+        max-width: none; /* Allow full width */
+        padding: 0.8rem; /* Consistent padding */
+    }
+    .btn:hover {
+        transform: scale(1.02); /* Reduced scale for mobile */
+        box-shadow: 0 0 5px rgba(81, 45, 168, 0.5); /* Subtle glow */
+    }
+    #message {
+        padding: 0.5rem;
+    }
+    #hidden-message.show {
+        animation: slideInMobile 0.6s ease forwards; /* Faster for mobile */
+    }
+}
+
+/* For very small screens (e.g., <320px) */
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.6rem;
+    }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInMobile {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Reduced distance */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
