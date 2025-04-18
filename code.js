@@ -259,7 +259,7 @@ const verses = {
         "सर्वं कर्माखिलं पार्थ ज्ञाने परिसमाप्यते (BG 4.33) All actions end in knowledge. (Wisdom protects)",
         "यज्ञदानतपःकर्म न त्याज्यं कार्यमेव तत् (BG 18.5) Sacrifice, charity, austerity not to abandon. (Duty protects)"
     ],
-    I dont know: [
+    Idontknow: [
     "कार्पण्यदोषोपहतस्वभावः पृच्छामि त्वां धर्मसम्मूढचेताः (BG 2.7) My heart is overcome by weakness, and I am confused about my duty. (Seek divine guidance)",
   "न हि प्रपश्यामि ममापनुद्याद् यच्छोकमुच्छोषणम् (BG 2.8) I see no way to dispel this grief that dries up my senses. (Acknowledge inner turmoil)",
   "नष्टो मोहः स्मृतिर्लब्धा त्वत्प्रसादान्मयाच्युत (BG 18.73) By your grace, my delusion is gone, and I have gained clarity. (Clarity through surrender)",
